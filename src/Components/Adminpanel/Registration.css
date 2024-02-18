@@ -1,0 +1,51 @@
+/* Registration.css */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .reg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Set your desired background color */
+    animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
+  }
+  
+  .reg-paper {
+    padding: 40px;
+    width: 400px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Set the paper background color */
+  }
+  
+  .reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .reg-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .reg-button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #4caf50; /* Set the button background color */
+    color: #fff; /* Set the button text color */
+    &:hover {
+      background-color: #45a049; /* Set the button background color on hover */
+    }
+  }
+  

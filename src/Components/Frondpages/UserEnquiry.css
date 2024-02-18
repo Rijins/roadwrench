@@ -1,0 +1,26 @@
+/* components/UserEnquiry/UserEnquiry.css */
+
+.user-enquiry-card {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-field {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .submit-button {
+    width: 100%;
+    margin-top: 15px;
+    background-color: #3498db; /* Button color */
+    color: #ffffff; /* Button text color */
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #2980b9; /* Hover effect color */
+  }
+  
