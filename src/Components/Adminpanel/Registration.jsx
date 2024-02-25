@@ -1,167 +1,116 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
-  TextField,
-} from '@mui/material';
+import { Button, TextField } from "@mui/material";
+import axios from "axios";
 import './Registration.css';
-import axios from 'axios';
 
 const Registration = () => {
-  const [formData, setFormData] = useState({
-    workshopName: '',
-    ownerName: '',
-    userId: '',
-    place: '',
-    contactNumber: '',
-    whatsappNumber: '',
-    address: '',
-    openFrom: 8,
-    openTo: 18,
-    password: '',
-    confirmPassword: '',
+  const [inputs, setInputs] = useState({
+    Workshopid: "",
+    Workshopname: "",
+    Phonenumber: "",
+    Watsappnumber: "",
+    Address: "",
+    Email: "",
+    Ownername: "",
   });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImage = (event) => {
+    setSelectedImage(event.target.files[0]);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const inputHandler = (event) => {
+    const { name, value } = event.target;
+    setInputs((prevInputs) => ({ ...prevInputs, [name]: value }));
+  };
 
-    try {
-      await axios.post('http://localhost:8000/register', formData);
-      // Redirect to another page or update state to show registration success
-    } catch (error) {
-      console.error('Registration failed', error);
-    }
+  const addHandler = () => {
+    const formData = new FormData();
+    formData.append('image1', selectedImage);
+    formData.append('Workshopid', inputs.Workshopid);
+    formData.append('Workshopname', inputs.Workshopname);
+    formData.append('Phonenumber', inputs.Phonenumber);
+    formData.append('Watsappnumber', inputs.Watsappnumber);
+    formData.append('Address', inputs.Address);
+    formData.append('Email', inputs.Email);
+    formData.append('Ownername', inputs.Ownername);
+
+    axios.post("http://localhost:8080/admin/newregistration", formData)
+      .then((response) => {
+        alert("Record saved");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <Paper className="reg-paper">
-        <form className="reg-form" onSubmit={handleSubmit}>
-          <h1>ADD WORKSHOP</h1>
-
-          <TextField
-            id="workshopName"
-            name="workshopName"
-            label="Workshop Name"
-            variant="filled"
-            value={formData.workshopName}
-            onChange={handleChange}
-          />
-          <TextField
-            id="ownerName"
-            name="ownerName"
-            label="Owner Name"
-            variant="filled"
-            value={formData.ownerName}
-            onChange={handleChange}
-          />
-          <TextField
-            id="userId"
-            name="userId"
-            label="User ID"
-            variant="filled"
-            value={formData.userId}
-            onChange={handleChange}
-          />
-          <TextField
-            id="place"
-            name="place"
-            label="Place"
-            variant="filled"
-            value={formData.place}
-            onChange={handleChange}
-          />
-          <TextField
-            id="contactNumber"
-            name="contactNumber"
-            label="Contact Number"
-            variant="filled"
-            value={formData.contactNumber}
-            onChange={handleChange}
-          />
-          <TextField
-            id="whatsappNumber"
-            name="whatsappNumber"
-            label="WhatsApp Number"
-            variant="filled"
-            value={formData.whatsappNumber}
-            onChange={handleChange}
-          />
-          <TextField
-            id="address"
-            name="address"
-            label="Address"
-            variant="filled"
-            value={formData.address}
-            onChange={handleChange}
-          />
-
-          <InputLabel id="demo-simple-select-label">Open from</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            name="openFrom"
-            value={formData.openFrom}
-            label="from"
-            onChange={handleChange}
-          >
-            <MenuItem value={8}>8:00 AM</MenuItem>
-            <MenuItem value={9}>9:00 AM</MenuItem>
-            <MenuItem value={10}>10:00 AM</MenuItem>
-          </Select>
-
-          <span>TO</span>
-
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            name="openTo"
-            value={formData.openTo}
-            label="to"
-            onChange={handleChange}
-          >
-            <MenuItem value={18}>6:00 PM</MenuItem>
-            <MenuItem value={19}>7:00 PM</MenuItem>
-            <MenuItem value={20}>8:00 PM</MenuItem>
-            <MenuItem value={21}>9:00 PM</MenuItem>
-            <MenuItem value={22}>10:00 PM</MenuItem>
-            <MenuItem value={23}>11:00 PM</MenuItem>
-          </Select>
-
-          <TextField
-            id="password"
-            name="password"
-            label="Password"
-            variant="filled"
-            type="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <TextField
-            id="confirmPassword"
-            name="confirmPassword"
-            label="Confirm Password"
-            variant="filled"
-            type="password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-          />
-
-          <Button variant="contained" color="success" className="reg-button" type="submit">
-            Submit
-          </Button>
-        </form>
-      </Paper>
-    </Grid>
+    <div>
+      <TextField
+        id="filled-basic"
+        label="Workshop ID"
+        name="Workshopid"
+        variant="filled"
+        value={inputs.Workshopid}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Workshop Name"
+        name="Workshopname"
+        variant="filled"
+        value={inputs.Workshopname}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Phone number"
+        name="Phonenumber"
+        variant="filled"
+        value={inputs.Phonenumber}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Whatsapp number"
+        name="Watsappnumber"
+        variant="filled"
+        value={inputs.Watsappnumber}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Address"
+        name="Address"
+        variant="filled"
+        value={inputs.Address}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Email"
+        name="Email"
+        variant="filled"
+        value={inputs.Email}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Owner Name"
+        name="Ownername"
+        variant="filled"
+        value={inputs.Ownername}
+        onChange={inputHandler}
+      />
+      <br />
+      <label>chose image</label> <input type="file" onChange={handleImage} />
+      <Button variant="contained" onClick={addHandler}>SUBMIT</Button>
+    </div>
   );
 };
 

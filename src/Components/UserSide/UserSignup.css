@@ -1,0 +1,60 @@
+
+  .signup-container {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/614/308/small_2x/abandoned-car-factory-old-steel-machinery-ruined-workshop-unhygienic-occupation-generated-by-ai-free-photo.jpg'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeInUp 1s ease; /* Add fade-in animation */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  #filled-basic {
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #filled-basic:hover {
+    background-color: rgba(255, 255, 255, 1); /* Hover background color with full opacity */
+  }
+  
+  Button {
+    background-color: #3498db;
+    color: #ffffff;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  Button:hover {
+    background-color: #2980b9;
+  }
+  
+  p {
+    color: #ffffff;
+  }
+  
+  Link {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  Link:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,60 @@
+/* LandingPage.css */
+
+.landing-page-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #1a1a1a; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+  }
+  
+  .landing-heading {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  
+  .landing-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    animation: imageAnimation 3s ease-in-out infinite;
+  }
+  
+  @keyframes imageAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .landing-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .landing-motto {
+    font-size: 22px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .signup-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Set your desired button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-button:hover {
+    background-color: #45a049; /* Set your desired button color on hover */
+  }
+  

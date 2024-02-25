@@ -10,7 +10,9 @@ import {
 
 import Registration from './Registration';
 import Home from './Home';
-import ViewWorkshops from './ViewWorkshops';
+
+import Regview from './Regview';
+import Userview from './UserView';
 
 const { Header, Content, Sider } = Layout;
 
@@ -23,7 +25,10 @@ const Navbar = () => {
         return <Registration />;
 
         case 'view':
-        return <ViewWorkshops/>;
+        return <Regview/>;
+
+        case 'userview':
+        return <Userview/>;
       
         
       default:
@@ -42,10 +47,20 @@ const Navbar = () => {
           <Menu.Item key="profile" icon={<UserOutlined />} onClick={() => setSelectedPage('profile')}>
             ADD
           </Menu.Item>
-          {/* Uncomment and customize the following menu items as needed */}
-          <Menu.Item key="view" icon={<FileOutlined />} >
+
+          <Menu.Item key="view" icon={<FileOutlined />} onClick={() => setSelectedPage('view')}>
             VIEW
           </Menu.Item>
+
+          <Menu.Item key="userview" icon={<FileOutlined />} onClick={() => setSelectedPage('userview')}>
+            UserVIEW
+          </Menu.Item>
+
+
+          {/* Uncomment and customize the following menu items as needed */}
+          {/* <Menu.Item key="view" icon={<FileOutlined />} >
+            VIEW
+          </Menu.Item> */}
           {/* <Menu.Item key="settings" icon={<SettingOutlined />}>
             Settings
           </Menu.Item>
