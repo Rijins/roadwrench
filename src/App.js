@@ -16,8 +16,10 @@ import UserLogin from './Components/UserSide/UserLogin';
 import Userview from './Components/Adminpanel/UserView';
 import LandingPage from './Components/UserSide/LandingPage';
 import Login from './Components/Adminpanel/Login';
-import Search from './Components/UserSide/Search';
+
 import Searcher from './Components/UserSide/Searcher';
+import SearchDetails from './Components/UserSide/SearchDetails';
+
 
 
 
@@ -35,6 +37,8 @@ function App() {
        
         <Route path='/' element={<LandingPage/>}/>
         <Route path='/search' element={<Searcher/>}/>
+        <Route path='/searchDetails/:id' element={<SearchDetails/>}/>
+        
 
         
         <Route path={'/userlogin'} element={<UserLogin method='post'/>}></Route>

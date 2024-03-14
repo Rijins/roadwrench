@@ -1,4 +1,3 @@
-// UserLogin.js
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -33,18 +32,18 @@ const UserLogin = () => {
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form">
+    <div className="login-form">
+      <video className="background-video" src="/video/video1.mp4" autoPlay loop muted />
+      <form>
         <TextField
           required
           id="outlined-required"
-          label="Email"
+          label='Email'
           name="email"
-          variant="filled"
           value={inputs.email}
           onChange={inputHandler}
         />
-        <br />
+        <br /> <br />
         <TextField
           id="outlined-password-input"
           label="Password"
@@ -53,7 +52,7 @@ const UserLogin = () => {
           value={inputs.password}
           onChange={inputHandler}
         />
-        <br />
+        <br /> <br />
         <Button variant="contained" onClick={checkData}>
           Login
         </Button>

@@ -18,7 +18,7 @@ const savedata =()=>{
       
         axios.put("http://localhost:8080/admin/edit/"+inputs._id,inputs)
         .then((response)=>{
-          console.log("Pst data"+response.data)
+          console.log("Post data"+response.data)
             alert("Updated")
             window.location.reload(false)
           })
@@ -45,6 +45,15 @@ const savedata =()=>{
       onChange={inputHandler}
     />
     <br />
+    <TextField
+        id="filled-basic"
+        label="Pin Code"
+        name="Pin"
+        variant="filled"
+        value={inputs.Pin}
+        onChange={inputHandler}
+      />
+      <br/>
     <TextField
       id="filled-basic"
       label="Phone number"

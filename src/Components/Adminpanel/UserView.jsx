@@ -21,7 +21,7 @@ const Userview = () => {
 
 
   return (<div>
-   <Typography >User VIEW</Typography><br/><br/>
+   <Typography >User Details</Typography><br/><br/>
 <TableContainer>
 <Table >
   <TableHead>

@@ -7,6 +7,7 @@ const Registration = () => {
   const [inputs, setInputs] = useState({
     Workshopid: "",
     Workshopname: "",
+    Pin: "",
     Phonenumber: "",
     Watsappnumber: "",
     Address: "",
@@ -30,6 +31,7 @@ const Registration = () => {
     formData.append('image1', selectedImage);
     formData.append('Workshopid', inputs.Workshopid);
     formData.append('Workshopname', inputs.Workshopname);
+    formData.append('Pin',inputs.Pin);
     formData.append('Phonenumber', inputs.Phonenumber);
     formData.append('Watsappnumber', inputs.Watsappnumber);
     formData.append('Address', inputs.Address);
@@ -45,6 +47,7 @@ const Registration = () => {
 
   return (
     <div>
+      <h2>Workshop Registration</h2>
       <TextField
         id="filled-basic"
         label="Workshop ID"
@@ -60,6 +63,15 @@ const Registration = () => {
         name="Workshopname"
         variant="filled"
         value={inputs.Workshopname}
+        onChange={inputHandler}
+      />
+      <br />
+      <TextField
+        id="filled-basic"
+        label="Pin Code"
+        name="Pin"
+        variant="filled"
+        value={inputs.Pin}
         onChange={inputHandler}
       />
       <br />

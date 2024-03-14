@@ -1,59 +1,31 @@
-/* UserLogin.css */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
-/* Styling for the login form container */
-.login-container {
-  background-color: #f8f9fa; /* Light gray background */
-  height: 100vh;
+.login-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1; /* Ensure form is above the video */
+  background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent overlay for better readability */
 }
 
-/* Styling for the login form */
-.login-form {
-  max-width: 300px;
+.login-form form {
+  width: 300px; /* Adjust form width as needed */
   padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff; /* White background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 0.5s ease; /* Fade-in animation */
+  background-color: rgba(255, 255, 255, 0.5);/* Background color of the form */
+  border-radius: 8px;
 }
 
-/* Styling for text fields */
-.login-form .MuiFilledInput-root {
-  background-color: #f0f0f0; /* Light gray background */
-}
-
-/* Styling for buttons */
-.login-form .MuiButton-contained {
-  background-color: #007bff; /* Blue background */
-  color: #ffffff; /* White color */
-}
-
-/* Hover effect for buttons */
-.login-form .MuiButton-contained:hover {
-  background-color: #0056b3; /* Darker blue background */
-}
-
-/* Styling for links */
-.login-form a {
-  color: #007bff; /* Blue color */
-  text-decoration: none;
-}
-
-/* Hover effect for links */
-.login-form a:hover {
-  text-decoration: underline;
-}
-
-/* Fade-in animation keyframes */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Additional styles for form elements */

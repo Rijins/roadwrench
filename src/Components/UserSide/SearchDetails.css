@@ -1,0 +1,18 @@
+/* SearchDetails.css */
+
+.search-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .card-media {
+    max-width: 100%; /* Set maximum width */
+    max-height: 300px; /* Set maximum height */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Maintain aspect ratio */
+  }
+  

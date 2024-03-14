@@ -46,6 +46,7 @@ const Regview = () => {
     <TableRow>
       <TableCell >Workshop id</TableCell>
       <TableCell >Workshop Name</TableCell>
+      <TableCell>Pin Code</TableCell>
       <TableCell >Phone Number</TableCell>
       <TableCell >Watsapp</TableCell>
       <TableCell>Address</TableCell>
@@ -63,13 +64,14 @@ const Regview = () => {
 
                   <TableCell>{row.Workshopid}</TableCell>
                   <TableCell>{row.Workshopname}</TableCell>
+                  <TableCell>{row.Pin}</TableCell>
                   <TableCell>{row.Phonenumber}</TableCell>
                   <TableCell>{row.Watsappnumber}</TableCell>
                   <TableCell>{row.Address}</TableCell>
                   <TableCell>{row.Email}</TableCell>
                   <TableCell>{row.Ownername}</TableCell>
                   <TableCell><ModeEditOutlineIcon color='success' onClick={()=>updateValues(row)}/></TableCell>
-                  <TableCell><DeleteForeverIcon color='error' onClick={()=>deleteValues(row._id)}/></TableCell>
+                  {/* <TableCell><DeleteForeverIcon color='error' onClick={()=>deleteValues(row._id)}/></TableCell> */}
                    </TableRow>
           )
       })}
